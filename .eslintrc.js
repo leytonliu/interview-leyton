@@ -1,10 +1,10 @@
 // https://eslint.bootcss.com/docs/user-guide/getting-started
-// eslint-disable-next-line no-undef
 module.exports = {
   root: true,
   env: {
     // 加载环境中预定义的全局变量
     browser: true,
+    node: true,
     es2021: true,
     'vue/setup-compiler-macros': true, // fix <script setup/>
   },
@@ -14,10 +14,16 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
   ],
   overrides: [],
-  parser: '@typescript-eslint/parser',
+  // parser: '@typescript-eslint/parser',
+  parser: 'vue-eslint-parser',
   parserOptions: {
+    parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    },
+    extraFileExtensions: ['.vue']
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
@@ -27,6 +33,7 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'no-console': 'off',
+    'vue/multi-word-component-names': 'off'
   },
 
   globals: {
