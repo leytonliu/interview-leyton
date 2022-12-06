@@ -33,7 +33,8 @@
     "build:mp-weixin": "uni build -p mp-weixin",
     "build:quickapp-webview": "uni build -p quickapp-webview",
     "build:quickapp-webview-huawei": "uni build -p quickapp-webview-huawei",
-    "build:quickapp-webview-union": "uni build -p quickapp-webview-union"
+    "build:quickapp-webview-union": "uni build -p quickapp-webview-union",
+    "preinstall": "node ./scripts/preinstall.js"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-alpha-3061020221121002",
