@@ -1,4 +1,5 @@
 // https://eslint.bootcss.com/docs/user-guide/getting-started
+// https://my.oschina.net/u/3407699/blog/5517388
 module.exports = {
   root: true,
   env: {
@@ -27,17 +28,21 @@ module.exports = {
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
-    // 可选值:['error' 'warn' 'off'] or [2,1,0]
+    // 代码规范 可选值:['error' 'warn' 'off'] or [2,1,0]
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'no-console': 'off',
-    'vue/multi-word-component-names': 'off'
+    'vue/multi-word-component-names': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-this-alias': 'off',
+    '@typescript-eslint/no-empty-function':'off'
   },
 
   globals: {
     // 定义全局变量
+    wx:'readonly',
     uni: 'readonly',
     process: 'readonly',
     plus: 'readonly',

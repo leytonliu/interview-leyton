@@ -4,7 +4,7 @@
     "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "strict": true,
+    "strict": false,
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
@@ -15,7 +15,8 @@
     ],
     "types": [
       "@dcloudio/types"
-    ]
+    ],
+    "allowJs": true,
   },
   "include": [
     "src/**/*.ts",

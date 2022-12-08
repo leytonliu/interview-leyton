@@ -1,9 +1,6 @@
 <template>
   <view class="content">
-    <image class="logo" src="/static/logo.png" @tap="handleClick" />
-    <view class="text-area">
-      <text class="title">{{ title }}</text>
-    </view>
+    user
   </view>
 </template>
 
