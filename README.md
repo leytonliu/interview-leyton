@@ -19,16 +19,30 @@ node 版本大于 ^14.18.0 || >=16.0.0
   - 安装 eslint `npx eslint --init`
   - 生成 .eslintrc.js 配置文件
 
-
 - 使用 pinia 状态管理
 
 - 时间处理 dayjs 库
 
 - 自定义 tabbar、navbar
+
   - https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html?search-key=%E8%87%AA%E5%AE%9A%E4%B9%89tabbar
 
 - 自定义 loading、 toast
 
 - 使用自定义字体
+
+- 页面基础布局组件，方便统一处理页面
+
+```vue
+<template>
+  <Page>
+    <Navbar></Navbar>
+    <Content></Content>
+    <Footer></Footer>
+  </Page>
+</template>
+```
+
+- 封装分页器方法
 
 https://juejin.cn/post/7046632389237293087
