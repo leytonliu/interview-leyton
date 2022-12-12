@@ -3,13 +3,16 @@
     <image class="logo" src="/static/logo.png" @tap="handleClick" />
     <view class="text-area">
       <text class="title">{{ title }}</text>
+      {{ counter.count }}
     </view>
   </view>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useCounterStore } from '../../stores/counter';
 
+const counter = useCounterStore();
 const title = ref('Hello');
 const handleClick = () => {
   const res = uni.getSystemInfoSync();

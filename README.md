@@ -29,10 +29,10 @@ node 版本大于 ^14.18.0 || >=16.0.0
 
 - 自定义 loading、 toast
 
-- 使用自定义字体
+- 使用自定义字体 https://transfonter.org/
 
 - 页面基础布局组件，方便统一处理页面
-
+  符合‘components/组件名称/组件名称.vue’目录结构，easycom方式可直接使用组件
 ```vue
 <template>
   <Page>
@@ -44,5 +44,9 @@ node 版本大于 ^14.18.0 || >=16.0.0
 ```
 
 - 封装分页器方法
+
+- 点击震动反馈
+
+- PostCSS 
 
 https://juejin.cn/post/7046632389237293087

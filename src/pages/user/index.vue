@@ -1,17 +1,24 @@
 <template>
-  <view class="content">
-    user
-  </view>
+  <Page>
+    <Navbar> 个人中心 </Navbar>
+    <Content>
+      <view v-for="(item, index) in 200" :key="index"> Hello {{ index }} </view>
+    </Content>
+  </Page>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { useCounterStore } from '../../stores/counter';
+const counter = useCounterStore();
 
-const title = ref('Hello');
-const handleClick = () => {
-  const res = uni.getSystemInfoSync();
-  console.log(res);
+const add = () => {
+  counter.count++;
 };
+// counter.count++;
+// // 可以手动触发
+// counter.$patch({ count: counter.count + 1 });
+// // 或者使用 actions
+// counter.increment();
 </script>
 
 <style>

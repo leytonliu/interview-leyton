@@ -1,6 +1,12 @@
 {
   "name": "interview-leyton",
   "version": "0.0.0",
+  "author": {
+    "name": "Leyton Liu",
+    "email": "895105616@qq.com",
+    "url": "https://github.com/leytonliu"
+  },
+  "license": "MIT",
   "scripts": {
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",
@@ -51,6 +57,7 @@
     "@dcloudio/uni-mp-toutiao": "3.0.0-3060520221121001",
     "@dcloudio/uni-mp-weixin": "3.0.0-3060520221121001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-3060520221121001",
+    "pinia": "^2.0.27",
     "vue": "^3.2.37",
     "vue-i18n": "^9.1.9"
   },
