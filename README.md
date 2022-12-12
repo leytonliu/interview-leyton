@@ -19,7 +19,7 @@ node 版本大于 ^14.18.0 || >=16.0.0
   - 安装 eslint `npx eslint --init`
   - 生成 .eslintrc.js 配置文件
 
-- 使用 pinia 状态管理
+- 使用 pinia 状态管理 pinia-plugin-persistedstate
 
 - 时间处理 dayjs 库
 
@@ -30,6 +30,7 @@ node 版本大于 ^14.18.0 || >=16.0.0
 - 自定义 loading、 toast
 
 - 使用自定义字体 https://transfonter.org/
+
 
 - 页面基础布局组件，方便统一处理页面
   符合‘components/组件名称/组件名称.vue’目录结构，easycom方式可直接使用组件

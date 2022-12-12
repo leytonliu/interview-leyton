@@ -11,6 +11,9 @@
 @import '../../static/css/var.scss';
 
 .page__content {
-  background: #eee;
+  background: $background;
+  /* #ifdef MP-WEIXIN || APP-PLUS */
+  padding-bottom: calc(48px + env(safe-area-inset-bottom));
+  /* #endif */
 }
 </style>
