@@ -53,6 +53,7 @@ const statusBarHeight = computed(() => {
 @import '../../static/css/var.scss';
 .narvbar__placeholder {
   height: calc(v-bind(statusBarHeight) + $navbar-height);
+  background: $background;
 }
 
 .navbar {

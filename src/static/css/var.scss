@@ -53,9 +53,6 @@ $line-height-xs: 14px;
 $line-height-sm: 18px;
 $line-height-md: 20px;
 $line-height-lg: 22px;
-$base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial,
-  Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
-$price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial, sans-serif;
 
 // Animation
 $animation-duration-base: 0.3s;
@@ -71,8 +68,12 @@ $border-radius-md: 4px;
 $border-radius-lg: 8px;
 $border-radius-max: 999px;
 
+// font
+$base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial,
+  Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+$price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial, sans-serif;
 // font-size
-$font-size-md: 28rpx;
+$font-size-md: 14px;
 
 // padding
 $padding-md: 32rpx;
