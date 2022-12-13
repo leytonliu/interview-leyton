@@ -2,8 +2,7 @@
 // eslint-disable-next-line no-undef
 Component({
   data: {
-    active:0,
-    selected: 0,
+    active: 0,
     color: '#8d92a3',
     selectedColor: '#6b5ffd',
     list: [
@@ -43,22 +42,19 @@ Component({
     switchTab(e) {
       const data = e.currentTarget.dataset;
       const url = data.path;
-      if(data.index ===this.data.active){
+      if (data.index === this.data.active) {
         return false;
       }
+      wx.vibrateShort({
+        type:'light'
+      });
       wx.switchTab({ url });
-      this.setData({
-        active: data.index,
-      });
-      // wx.vibrateShort({
-      //   type:'light'
-      // });
     },
-    init(index) {
+    init() {
+      const page = getCurrentPages().pop();
       this.setData({
-        active: index
+        active: this.data.list.findIndex(item => item.url === `/${page.route}`)
       });
-    },
-
+    }
   }
 });

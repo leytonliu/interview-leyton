@@ -5,21 +5,8 @@
   </Page>
 </template>
 
-<!-- <script setup lang="ts">
-
-
-</script> -->
-<script>
-export default {
-  onShow() {
-
-    console.log('this.$scope', this.$scope);
-    console.log('this.$scope.getTabBar', this.$scope.getTabBar);
-    if (typeof this.$scope.getTabBar === 'function' && this.$scope.getTabBar()) {
-      this.$scope.getTabBar().init(1);
-    }
-  },
-
-};
+<script lang="ts" setup>
+import useCustomTabBar from '@/utils/composition/useCustomTabBar';
+useCustomTabBar();
 </script>
 <style lang="scss" scoped></style>

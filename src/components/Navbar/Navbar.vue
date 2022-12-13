@@ -47,6 +47,7 @@ const { systemInfo } = systemInfoStore;
 const statusBarHeight = computed(() => {
   return systemInfo.statusBarHeight ? `${systemInfo.statusBarHeight}px` : '0px';
 });
+console.log({ statusBarHeight });
 </script>
 
 <style lang="scss" scoped>

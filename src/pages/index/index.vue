@@ -5,35 +5,24 @@
       <view v-for="(item, index) in 200" :key="index">
         {{ index + 1 }}
       </view>
+      <button @tap="onTap">switchTab</button>
     </Content>
   </Page>
 </template>
 
-<!-- <script setup lang="ts">
-import { onShow } from '@dcloudio/uni-app';
-import { getCurrentInstance } from 'vue';
-onShow(() => {
-  const app = getApp();
+<script lang="ts" setup>
+import useCustomTabBar from '@/utils/composition/useCustomTabBar';
+useCustomTabBar();
 
-  console.log('app', app);
-  console.log('app', app.getTabbar);
-  // console.log('this', this);
-
-  // if (typeof this.$scope.getTabBar === 'function' && this.$scope.getTabBar()) {
-  //   this.$scope.getTabBar().init();
-  // }
-});
-</script> -->
-
-<script>
-export default {
-  onShow() {
-    console.log(this.$scope);
-    // https://www.cnblogs.com/memoyu/p/16227592.html
-    if (typeof this.$scope.getTabBar === 'function' && this.$scope.getTabBar()) {
-      this.$scope.getTabBar().init(0);
-    }
-  },
+const onTap = () => {
+  console.log('tap');
+  uni.switchTab({
+    url: '/pages/bill/index',
+    fail: (e) => {
+      console.log(e);
+    },
+  });
 };
 </script>
+
 <style lang="scss" scoped></style>

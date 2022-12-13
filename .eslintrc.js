@@ -46,6 +46,8 @@ module.exports = {
     uni: 'readonly',
     process: 'readonly',
     plus: 'readonly',
+    getApp: 'readonly',
+    getCurrentPages: 'readonly',
   },
 };
 

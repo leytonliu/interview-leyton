@@ -17,6 +17,11 @@
       "@dcloudio/types"
     ],
     "allowJs": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
   "include": [
     "src/**/*.ts",
