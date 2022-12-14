@@ -1,13 +1,20 @@
 <template>
   <view class="narvbar__placeholder">
-    <view class="navbar">
+    <view class="navbar" :style="{ background: showBackground ? background : 'transparent' }">
       <view class="navbar__left">
-        <slot name="left" />
+        <slot name="left">
+          <view @click="onClickLeft">
+            <Icon v-if="leftArrow" name="back-arrow" size="16px" weight="bold" />
+            <text v-if="leftText" :style="{ color: textColor }" class="navbar__left-text">
+              {{ leftText }}
+            </text>
+          </view>
+        </slot>
       </view>
 
       <view class="navbar__content navbar__title">
-        <slot name="default">
-          <text>{{ title }}</text>
+        <slot name="default" v-if="showTitle">
+          <text :style="{ color: textColor }">{{ title }}</text>
         </slot>
       </view>
 
@@ -35,11 +42,40 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
-  leftText: String,
   rightText: String,
   leftArrow: Boolean,
+  leftText: String,
   placeholder: Boolean,
+  showTitle: {
+    type: Boolean,
+    default: true,
+  },
+  showBackground: {
+    type: Boolean,
+    default: true,
+  },
+  background: {
+    type: String,
+    default: '#fff',
+  },
+  textColor: {
+    type: String,
+    default: '#6b5ffd',
+  },
+  customLeftClick: Boolean,
 });
+
+const emit = defineEmits(['click-left']);
+
+const onClickLeft = () => {
+  if (props.customLeftClick) {
+    emit('click-left');
+  } else {
+    uni.navigateBack({
+      delta: 1,
+    });
+  }
+};
 
 const systemInfoStore = useSystemInfoStore();
 const { systemInfo } = systemInfoStore;
@@ -47,7 +83,6 @@ const { systemInfo } = systemInfoStore;
 const statusBarHeight = computed(() => {
   return systemInfo.statusBarHeight ? `${systemInfo.statusBarHeight}px` : '0px';
 });
-console.log({ statusBarHeight });
 </script>
 
 <style lang="scss" scoped>
@@ -74,8 +109,12 @@ console.log({ statusBarHeight });
     bottom: 0;
     display: flex;
     align-items: center;
-    padding: 0 $padding-md;
+    padding: v-bind(statusBarHeight) $padding-md 0;
     font-size: $font-size-md;
+  }
+
+  &__left-text {
+    margin-left: 5px;
   }
 
   &__left {

@@ -50,4 +50,8 @@ node 版本大于 ^14.18.0 || >=16.0.0
 
 - PostCSS 
 
+- 图表 F2  https://f2.antv.vision/zh/docs/tutorial/getting-started
+
+
+
 https://juejin.cn/post/7046632389237293087

@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'iconfont'; /* Project id 3822570 */
+  src: url('//at.alicdn.com/t/c/font_3822570_spamf8ug5f.woff2?t=1670842637158') format('woff2'),
+    url('//at.alicdn.com/t/c/font_3822570_spamf8ug5f.woff?t=1670842637158') format('woff'),
+    url('//at.alicdn.com/t/c/font_3822570_spamf8ug5f.ttf?t=1670842637158') format('truetype');
+}
+
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: 18px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-back-arrow:before {
+  content: '\e697';
+}
+
+.icon-book:before {
+  content: '\e840';
+}
+
+.icon-book-copy:before {
+  content: '\e841';
+}
+
+.icon-piechart:before {
+  content: '\e78e';
+}
+
+.icon-home:before {
+  content: '\e7c6';
+}
+
+.icon-add:before {
+  content: '\e6df';
+}
+
+.icon-setting:before {
+  content: '\e645';
+}
+
+.icon-piechart-copy:before {
+  content: '\e7c7';
+}
+
+.icon-home-copy:before {
+  content: '\e7c9';
+}
+
+.icon-add-copy:before {
+  content: '\e7ca';
+}
+
+.icon-setting-copy:before {
+  content: '\e7cb';
+}

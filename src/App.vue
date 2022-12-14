@@ -24,4 +24,5 @@ onHide(() => {
 @import './static/fonts/fonts.scss';
 @import './static/css/var.scss';
 @import './static/css/overrides.scss';
+@import './static/css/iconfont/iconfont.scss';
 </style>
