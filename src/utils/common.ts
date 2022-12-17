@@ -64,3 +64,20 @@ function priceFormat(price, fill = 0) {
   }
   return priceFormatValue;
 }
+
+
+export function filterNullValueObject(obj: any) {
+  const params: any = {};
+  if (obj && Object.keys(obj).length >= 1) {
+    Object.keys(obj).forEach((key) => {
+      if (key && obj[key] !== undefined && obj[key] !== '' && obj[key] !== null) {
+        // 如果查询的条件不为空
+        if (Array.isArray(obj[key]) && obj[key].length === 0) {
+          return;
+        }
+        params[key] = obj[key];
+      }
+    });
+  }
+  return params; // 返回查询条件
+}

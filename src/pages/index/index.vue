@@ -12,6 +12,7 @@
 import useCustomTabBar from '@/utils/composition/useCustomTabBar';
 import { ref } from 'vue';
 useCustomTabBar();
+console.log('环境变量', import.meta.env);
 
 const imgUrl = ref(
   'https://tvax2.sinaimg.cn/large/acd22bb7ly8h46ofhs0atj20u00u0ac3.jpg?KID=imgbed,tva&Expires=1670931637&ssig=89WC2BVCno&timestamp=1670920857223',

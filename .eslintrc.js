@@ -32,7 +32,7 @@ module.exports = {
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
-    semi: ['error', 'always'],
+    semi: ['warn', 'always'],
     'no-console': 'off',
     'vue/multi-word-component-names': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
