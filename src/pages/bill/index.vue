@@ -1,20 +1,6 @@
 <template>
   <Page>
-    <!-- <Navbar
-      :showTitle="showNavbarTitle"
-      showBackground
-      left-arrow
-      text-color="#fff"
-      background="linear-gradient(to bottom, #ff6034, #ee0a24)"
-      title="图表"
-    /> -->
-    <Navbar
-      :showTitle="showNavbarTitle"
-      :showBackground="showNavbarTitle"
-      left-arrow
-      title="账单"
-      @click-left="back()"
-    >
+    <Navbar :showTitle="showNavbarTitle" :showBackground="showNavbarTitle" left-arrow title="账单">
     </Navbar>
 
     <Content>
@@ -55,9 +41,6 @@ onReady(() => {
   });
 });
 
-const back = () => {
-  console.log('back');
-};
 onUnload(() => {
   console.log('observer', observer);
   if (observer) {

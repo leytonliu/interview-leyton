@@ -12,9 +12,9 @@
         </slot>
       </view>
 
-      <view class="navbar__content navbar__title">
+      <view class="navbar__content navbar__title" :style="{ color: textColor }">
         <slot name="default" v-if="showTitle">
-          <text :style="{ color: textColor }">{{ title }}</text>
+          <text>{{ title }}</text>
         </slot>
       </view>
 
@@ -60,7 +60,7 @@ const props = defineProps({
   },
   textColor: {
     type: String,
-    default: '#6b5ffd',
+    default: '#323233',
   },
   customLeftClick: Boolean,
 });

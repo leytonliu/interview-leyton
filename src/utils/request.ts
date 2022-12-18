@@ -27,7 +27,7 @@ const request = (options: UniApp.RequestOptions) => {
     };
     // 兼容完整API相对路径
     if (!/(http|https):\/\/([\w.]+\/?)\S*/.test(options.url)) {
-      options.url = `${import.meta.env.VITE_APP_API_HOST}${options.url}`;
+      options.url = `${import.meta.env.VITE_API_HOST}${options.url}`;
     }
 
     //  过滤data中空对象
