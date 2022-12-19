@@ -1,9 +1,9 @@
 <template>
   <Page>
-    <Navbar :showTitle="showNavbarTitle" :showBackground="showNavbarTitle" left-arrow title="账单">
-    </Navbar>
+    <Navbar :showTitle="showNavbarTitle" title="账单" />
 
     <Content>
+      <ContentTitle class="content-title">账单</ContentTitle>
       <view class="list">
         <view
           v-for="item in 300"
@@ -19,45 +19,11 @@
 </template>
 
 <script lang="ts" setup>
-import { debounce, throttle } from '@/utils/common';
 import useCustomTabBar from '@/utils/composition/useCustomTabBar';
-import { onPageScroll, onReady, onUnload } from '@dcloudio/uni-app';
-import { getCurrentInstance, ref } from 'vue';
+import useDisplayNavbarTitle from '@/utils/composition/useNavbarTitle';
+
 useCustomTabBar();
-
-const showNavbarTitle = ref(false);
-let observer = null;
-onReady(() => {
-  const _this = getCurrentInstance();
-  observer = uni.createIntersectionObserver(_this);
-
-  observer.relativeToViewport({ top: 0 }).observe('.item-1', (res) => {
-    if (res.intersectionRatio > 0 && showNavbarTitle.value) {
-      showNavbarTitle.value = false;
-    } else if (res.intersectionRatio === 0 && !showNavbarTitle.value) {
-      showNavbarTitle.value = true;
-    }
-    console.log(res);
-  });
-});
-
-onUnload(() => {
-  console.log('observer', observer);
-  if (observer) {
-    observer.disconnect();
-  }
-});
-// onPageScroll(
-//   // 方式1: scroll，缺点：惯性滚动期间不触发
-//   throttle(({ scrollTop }) => {
-//     console.log(scrollTop);
-//     if (scrollTop > 50 && !showNavbarTitle.value) {
-//       showNavbarTitle.value = true;
-//     } else if (scrollTop < 50 && showNavbarTitle.value) {
-//       showNavbarTitle.value = false;
-//     }
-//   }, 50),
-// );
+const [showNavbarTitle] = useDisplayNavbarTitle();
 </script>
 
 <style lang="scss" scoped></style>

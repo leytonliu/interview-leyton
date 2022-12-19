@@ -1,5 +1,5 @@
 <template>
-  <view class="image__wrapper" :style="{ width: width, height: height }" @click="onClick">
+  <view class="image__wrapper" :style="{ width: width, height: height }" @tap="onTap">
     <!-- 图片大小占位 也可当作骨架屏使用-->
     <view class="image__placeholder skeleton" :class="placeholderClass"></view>
     <image
@@ -31,7 +31,7 @@ const loading = ref(true);
 const imageClass = ref('');
 const placeholderClass = ref('');
 
-const emit = defineEmits(['load', 'error', 'click']);
+const emit = defineEmits(['load', 'error', 'tap']);
 
 const reset = () => {
   loading.value = true;
@@ -51,8 +51,8 @@ const onImageError = (event) => {
   loading.value = false;
 };
 
-const onClick = (event) => {
-  emit('click', event);
+const onTap = (event) => {
+  emit('tap', event);
 };
 
 // 当图片src改变时重置状态

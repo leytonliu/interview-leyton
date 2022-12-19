@@ -6,7 +6,7 @@
       class="overlay"
       :style="{ backgroundColor: state.mask ? 'rgba(0, 0, 0, 0.7)' : 'transparent' }"
       @touchmove.stop.prevent="noop"
-      @click.stop.prevent="onOverlayClick"
+      @tap.stop.prevent="onOverlayTap"
     >
     </view>
 
@@ -36,10 +36,10 @@ const state = reactive({
   show: false, // 是否展示
   title: '加载中', // loading 文案
   mask: false, // 是否显示遮罩
-  duration: 0, // 持续时间  为0不自动关闭
+  duration: 2000, // 持续时间  为0不自动关闭
 });
 
-const emit = defineEmits(['overlay-click']);
+const emit = defineEmits(['overlay-tap']);
 
 const hideLoading = () => {
   state.show = false;
@@ -58,8 +58,8 @@ const showLoading = (options: LoadingOptions) => {
 const noop = (e) => {
   e.preventDefault;
 };
-const onOverlayClick = () => {
-  emit('overlay-click');
+const onOverlayTap = () => {
+  emit('overlay-tap');
 };
 defineExpose({
   showLoading,
@@ -68,7 +68,7 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-@import '../../static/css/var.scss';
+@import '../../static/css/var.module.scss';
 .overlay {
   background-color: rgba(0, 0, 0, 0.7);
   height: 100%;

@@ -8,9 +8,10 @@
 <script setup></script>
 
 <style lang="scss" scoped>
-@import '../../static/css/var.scss';
+@import '../../static/css/var.module.scss';
 
 .page__content {
+  height: 100%;
   background: $background;
   /* #ifdef MP-WEIXIN || APP-PLUS */
   padding-bottom: calc(48px + env(safe-area-inset-bottom));

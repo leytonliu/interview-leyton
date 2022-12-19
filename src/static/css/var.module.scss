@@ -98,3 +98,15 @@ $background: #f6f6f7;
 $red-light: #e36760;
 
 $green-light: #39d79d;
+
+$purple: #6b5ffd;
+$red: #e36760;
+$green: #39d79d;
+$gray: #8d92a3;
+
+:export {
+  purple: $purple;
+  red: $red;
+  green: $green;
+  gray: $gray;
+}

@@ -11,7 +11,7 @@ defineProps({});
 </script>
 
 <style lang="scss" scoped>
-@import '../../static/css/var.scss';
+@import '../../static/css/var.module.scss';
 
 .content__title__wrapper {
   background: #fff;

@@ -1,12 +1,13 @@
 <template>
   <Page>
-    <Navbar :showTitle="showNavbarTitle"> TOTO Wallet </Navbar>
+    <Navbar :showTitle="showNavbarTitle"> My Wallet </Navbar>
     <Content>
-      <ContentTitle class="content-title">TOTO Wallet</ContentTitle>
+      <ContentTitle class="content-title">My Wallet</ContentTitle>
       <Loading ref="loadingRef" />
-      <button @click="onTap1">loading1</button>
-      <button @click="onTap2">loading2</button>
-      <button @click="onTap3">hideLoading</button>
+      <LButton @tap="onTap1">loading1</LButton>
+      <LButton @tap="onTap2">loading2</LButton>
+      <LButton @tap="onTap3">hideLoading</LButton>
+      <LButton @tap="onTap3">记一笔</LButton>
       <view class="list">
         <view
           v-for="item in 300"
@@ -25,8 +26,6 @@
 import useCustomTabBar from '@/utils/composition/useCustomTabBar';
 import useLoading from '@/utils/composition/useLoading';
 import useDisplayNavbarTitle from '@/utils/composition/useNavbarTitle';
-
-import { getCurrentInstance, onMounted, ref } from 'vue';
 
 useCustomTabBar();
 

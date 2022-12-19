@@ -1,15 +1,16 @@
 <template>
   <Page>
-    <Navbar> 设置 </Navbar>
+    <Navbar :showTitle="showNavbarTitle"> 设置 </Navbar>
     <Content>
+      <ContentTitle class="content-title">设置</ContentTitle>
       {{ counterStore.count }}
-      <button @click="onAdd">增加</button>
+      <LButton @tap="onAdd">增加</LButton>
 
-      <button @tap="onLogin">登录</button>
+      <LButton @tap="onLogin">登录</LButton>
 
       <view>accessToken: {{ persistStore.accessToken }}</view>
       <view> openId : {{ persistStore.openId }}</view>
-      <button open-type="chooseAvatar" @chooseavatar="onChooseAvatar">获取头像</button>
+      <LButton open-type="chooseAvatar" @chooseavatar="onChooseAvatar">获取头像</LButton>
     </Content>
   </Page>
 </template>
@@ -18,11 +19,13 @@
 import { useCounterStore } from '@/stores/counter';
 import { usePersistStore } from '@/stores/persist';
 import useCustomTabBar from '@/utils/composition/useCustomTabBar';
+import useDisplayNavbarTitle from '@/utils/composition/useNavbarTitle';
 import { storeToRefs } from 'pinia';
 
 useCustomTabBar();
-
+const [showNavbarTitle] = useDisplayNavbarTitle();
 const counterStore = storeToRefs(useCounterStore());
+
 const onAdd = () => {
   counterStore.count.value = counterStore.count.value + 1;
 };

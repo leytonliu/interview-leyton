@@ -3,7 +3,7 @@
     <view class="navbar" :style="{ background: showBackground ? background : 'transparent' }">
       <view class="navbar__left">
         <slot name="left">
-          <view @click="onClickLeft">
+          <view @tap="onTapLeft">
             <Icon v-if="leftArrow" name="back-arrow" size="16px" weight="bold" />
             <text v-if="leftText" :style="{ color: textColor }" class="navbar__left-text">
               {{ leftText }}
@@ -62,14 +62,14 @@ const props = defineProps({
     type: String,
     default: '#323233',
   },
-  customLeftClick: Boolean,
+  customLeftTap: Boolean,
 });
 
-const emit = defineEmits(['click-left']);
+const emit = defineEmits(['tap-left']);
 
-const onClickLeft = () => {
-  if (props.customLeftClick) {
-    emit('click-left');
+const onTapLeft = () => {
+  if (props.customLeftTap) {
+    emit('tap-left');
   } else {
     uni.navigateBack({
       delta: 1,
@@ -86,7 +86,7 @@ const statusBarHeight = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import '../../static/css/var.scss';
+@import '../../static/css/var.module.scss';
 .narvbar__placeholder {
   height: calc(v-bind(statusBarHeight) + $navbar-height);
   background: $background;

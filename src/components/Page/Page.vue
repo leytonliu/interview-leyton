@@ -10,5 +10,6 @@
 <style lang="scss" scoped>
 .page {
   background: #fff;
+  height: 100%;
 }
 </style>
