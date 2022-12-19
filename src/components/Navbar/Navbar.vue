@@ -109,7 +109,7 @@ const statusBarHeight = computed(() => {
     bottom: 0;
     display: flex;
     align-items: center;
-    padding: v-bind(statusBarHeight) $padding-md 0;
+    padding: v-bind(statusBarHeight) 16px 0;
     font-size: $font-size-md;
   }
 

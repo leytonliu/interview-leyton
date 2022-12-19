@@ -31,19 +31,22 @@ module.exports = {
     // 代码规范 可选值:['error' 'warn' 'off'] or [2,1,0]
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
+    quotes: ['warn', 'single',
+      { allowTemplateLiterals: true }
+    ],
     semi: ['warn', 'always'],
+
     'no-console': 'off',
     'vue/multi-word-component-names': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-this-alias': 'off',
-    '@typescript-eslint/no-empty-function':'off'
+    '@typescript-eslint/no-empty-function': 'off'
 
   },
 
   globals: {
     // 定义全局变量
-    wx:'readonly',
+    wx: 'readonly',
     uni: 'readonly',
     process: 'readonly',
     plus: 'readonly',

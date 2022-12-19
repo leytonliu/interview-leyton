@@ -9,6 +9,14 @@
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+@media (prefers-color-scheme: dark) {
+  /* DarkMode 下的样式 start */
+  .tab-bar {
+    background: #000;
+  }
+  /* DarkMode 下的样式 end */
+}
+
 .tab-bar-border {
   background-color: rgba(0, 0, 0, 0.33);
   position: absolute;

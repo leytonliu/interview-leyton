@@ -12,7 +12,7 @@
 
 .page__content {
   height: 100%;
-  background: $background;
+  // background: $background;
   /* #ifdef MP-WEIXIN || APP-PLUS */
   padding-bottom: calc(48px + env(safe-area-inset-bottom));
   /* #endif */

@@ -37,6 +37,7 @@ const tabs = [
 const activeTabIndex = ref(0);
 
 const toggleTab = (index) => {
+  uni.vibrateShort({});
   activeTabIndex.value = index;
 };
 </script>
