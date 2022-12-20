@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onLaunch, onShow, onHide, onThemeChange } from '@dcloudio/uni-app';
+import { onLaunch, onShow, onHide, onThemeChange, onReady } from '@dcloudio/uni-app';
 import systemInfoManager from './utils/systemInfoManager';
 import checkForUpdate from './utils/updateManager';
 
@@ -11,8 +11,15 @@ onLaunch(async () => {
   if (await systemInfoManager.retrieveSystemInfo()) {
     console.log('已取到了系统信息');
   }
+
+  // // # ifdef H5
+  // document.body.style.setProperty(`--purple`, 'red');
+  // // # endif
 });
 
+onReady(() => {
+  const query = uni.createSelectorQuery();
+});
 onShow(() => {
   console.log('App Show');
 });
@@ -27,7 +34,5 @@ onThemeChange((options) => {
 </script>
 
 <style lang="scss">
-@import './static/css/var.module.scss';
-@import './static/css/overrides.scss';
-@import './static/css/iconfont/iconfont.scss';
+@import './static/css';
 </style>

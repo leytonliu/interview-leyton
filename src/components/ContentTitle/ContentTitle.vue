@@ -14,10 +14,10 @@ defineProps({});
 @import '../../static/css/var.module.scss';
 
 .content__title__wrapper {
-  background: #fff;
+  background: $background;
   padding: 10px;
   .content__title {
-    color: #000;
+    color: $text-color;
     font-size: 32px;
     position: relative;
     font-weight: 500;

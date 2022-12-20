@@ -10,11 +10,10 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  /* DarkMode 下的样式 start */
   .tab-bar {
     background: #000;
+    /* filter: invert(1); */
   }
-  /* DarkMode 下的样式 end */
 }
 
 .tab-bar-border {

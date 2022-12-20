@@ -33,7 +33,7 @@
  */
 import { computed } from 'vue';
 import { useSystemInfoStore } from '../../stores/systemInfo';
-
+import cssVars from '../../static/css/var.module.scss';
 const props = defineProps({
   title: String,
   fixed: Boolean,
@@ -56,14 +56,15 @@ const props = defineProps({
   },
   background: {
     type: String,
-    default: '#fff',
+    default: cssVars.navbarBackground,
   },
   textColor: {
     type: String,
-    default: '#323233',
+    default: cssVars.textColor,
   },
   customLeftTap: Boolean,
 });
+console.log('cssVars', cssVars);
 
 const emit = defineEmits(['tap-left']);
 

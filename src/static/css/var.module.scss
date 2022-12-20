@@ -1,14 +1,21 @@
 // Color Palette
-$purple: #6b5ffd;
-$red: #e36760;
-$green: #39d79d;
-$gray: #8d92a3;
-$white: #fff;
-$black: #000;
+$purple: var(--purple, #6b5ffd);
+$red: var(--red, #e36760);
+$green: var(--green, #39d79d);
+$gray: var(--gray, #8d92a3);
+$white: var(--white, #fff);
+$black: var(--black, #000);
 
 // background
-$background: #f6f6f7;
-$purple-background: #efeffc;
+$background: var(--background-color, #f6f6f7);
+$background-purple: var(--background-purple, #efeffc);
+
+// text-color
+$text-color: var(--text-color, #333);
+$text-color-black: var(--text-color-black, #000);
+
+// border-color
+$border-color: var(--border-color, #eee);
 
 // font-size
 $font-size-xs: 10px;
@@ -28,13 +35,22 @@ $gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
 
 // navbar
 $navbar-height: 44px;
-$navbar-background: #fff;
+$navbar-background: var(--navbar-background, #fff);
 
-$dark-background: #222;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #222;
+    --text-color: #fff;
+    --navbar-background: #000;
+  }
+}
 
 :export {
   purple: $purple;
   red: $red;
   green: $green;
   gray: $gray;
+  background: $background;
+  textColor: $text-color;
+  navbarBackground: $navbar-background;
 }

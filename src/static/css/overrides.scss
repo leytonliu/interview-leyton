@@ -1,18 +1,17 @@
 @import './var.module.scss';
 
 page {
+  height: 100%;
   font-family: $base-font-family;
   background: $background;
 }
-@media (prefers-color-scheme: dark) {
-  page {
-    background: $dark-background;
-  }
-}
 
+// H5 原生tabbar
 .uni-tabbar {
   border-top: 1px solid rgba(255, 255, 255, 0.33);
+  background: $navbar-background !important;
 }
+
 /* 解决小程序和app滚动条的问题 */
 /* #ifdef MP-WEIXIN || APP-PLUS */
 ::-webkit-scrollbar {
