@@ -6,6 +6,15 @@ page {
   background: $background;
 }
 
+// @media (prefers-color-scheme: dark) {
+//   page {
+//     filter: invert(1) hue-rotate(0.5turn);
+//   }
+//   img {
+//     opacity: 0.75;
+//   }
+// }
+
 // H5 原生tabbar
 .uni-tabbar {
   border-top: 1px solid rgba(255, 255, 255, 0.33);

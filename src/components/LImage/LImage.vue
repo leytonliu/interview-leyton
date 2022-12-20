@@ -9,6 +9,7 @@
       :src="src"
       @load="onImageLoad"
       @error="onImageError"
+      :mode="mode"
     />
   </view>
 </template>
@@ -24,6 +25,9 @@ const props = defineProps({
   },
   height: {
     type: [Number, String],
+  },
+  mode: {
+    type: String,
   },
 });
 

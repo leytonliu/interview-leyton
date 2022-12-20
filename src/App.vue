@@ -1,24 +1,60 @@
 <script setup lang="ts">
 import { onLaunch, onShow, onHide, onThemeChange, onReady } from '@dcloudio/uni-app';
-import systemInfoManager from './utils/systemInfoManager';
+import { useSystemInfoStore } from './stores/systemInfo';
 import checkForUpdate from './utils/updateManager';
+const systemInfoStore = useSystemInfoStore();
 
 onLaunch(async () => {
   console.log('App Launch');
-  // 检查更新
-  checkForUpdate();
+  // 获取系统信息
+  systemInfoStore.getSystemInfo();
 
-  if (await systemInfoManager.retrieveSystemInfo()) {
-    console.log('已取到了系统信息');
+  // #ifdef H5
+  const mediaQueryList = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+
+  // 判断是否匹配深色模式
+  if (mediaQueryList && mediaQueryList.matches) {
+    systemInfoStore.$patch({
+      systemInfo: {
+        theme: 'dark',
+      },
+    });
+  } else {
+    systemInfoStore.$patch({
+      systemInfo: {
+        theme: 'light',
+      },
+    });
   }
 
-  // // # ifdef H5
-  // document.body.style.setProperty(`--purple`, 'red');
-  // // # endif
+  // 监听主题切换事件
+  mediaQueryList &&
+    mediaQueryList.addEventListener('change', (e) => {
+      console.log('=====>change mode:', e);
+      if (e.matches) {
+        console.log('=====>e.matches:dark');
+        systemInfoStore.$patch({
+          systemInfo: {
+            theme: 'dark',
+          },
+        });
+      } else {
+        console.log('=====>e.matches:light');
+        systemInfoStore.$patch({
+          systemInfo: {
+            theme: 'light',
+          },
+        });
+      }
+    });
+  // #endif
+
+  // 检查更新
+  checkForUpdate();
 });
 
 onReady(() => {
-  const query = uni.createSelectorQuery();
+  console.log('App onReady');
 });
 onShow(() => {
   console.log('App Show');
@@ -30,6 +66,7 @@ onHide(() => {
 
 onThemeChange((options) => {
   console.log('theme change', options);
+  systemInfoStore.getSystemInfo();
 });
 </script>
 

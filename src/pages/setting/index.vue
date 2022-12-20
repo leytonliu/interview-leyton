@@ -38,7 +38,6 @@ const persistStore = usePersistStore();
 const onLogin = async () => {
   console.log('login');
   persistStore.getAccessToken();
-  // persistStor
 };
 // 通过 jscode2session 接口获取openId
 // {

@@ -1,21 +1,26 @@
 <template>
-  <view class="page" :style="theme">
+  <view class="page" :style="themeStyle">
     <!-- Page -->
     <slot />
   </view>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-const light = {
-  '--purple': 'red',
-  '--red': 'yellow',
+import { computed } from 'vue';
+import { mapThemeVarsToCSSVars } from '../../utils/theme';
+import { useSystemInfoStore } from '@/stores/systemInfo';
+
+const darkThemeVars = {
+  backgroundColor: '#12141D',
+  navbarBackground: '#000',
+  textColor: '#fff',
 };
-Object.entries(light).forEach((ele, index) => {
-  `${ele[0]}:${ele[1]}`;
-});
-// console.log(JSON.stringify(light));
-const theme = ref(``);
+
+const systemInfoStore = useSystemInfoStore();
+
+const themeStyle = computed(
+  () => systemInfoStore.systemInfo.theme === 'dark' && mapThemeVarsToCSSVars(darkThemeVars),
+);
 </script>
 
 <style lang="scss" scoped>

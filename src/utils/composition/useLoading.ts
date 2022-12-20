@@ -1,4 +1,4 @@
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import { LoadingOptions } from '../../components/Loading/Loading.vue';
 
 /**
@@ -7,9 +7,6 @@ import { LoadingOptions } from '../../components/Loading/Loading.vue';
 const useLoading = () => {
   const loadingRef = ref(null);
 
-  onMounted(() => {
-    console.log('loading组件', loadingRef.value);
-  });
   // 只能在mounted之后使用
   const showLoading = (options: LoadingOptions) => {
     loadingRef.value?.showLoading(options);

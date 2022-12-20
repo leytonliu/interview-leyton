@@ -1,5 +1,5 @@
 <template>
-  <button :disabled="disabled" :loading="loading" open-type="openType" @tap="onTap" class="button">
+  <button :disabled="disabled" :loading="loading" open-type="openType" class="button">
     <slot />
   </button>
 </template>
@@ -23,11 +23,11 @@ defineProps({
   // }
 });
 
-const emit = defineEmits(['tap']);
+// const emit = defineEmits(['tap']);
 
-const onTap = () => {
-  emit('tap');
-};
+// const onTap = () => {
+//   emit('tap');
+// };
 </script>
 
 <style lang="scss" scoped>

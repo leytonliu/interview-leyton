@@ -64,7 +64,6 @@ const props = defineProps({
   },
   customLeftTap: Boolean,
 });
-console.log('cssVars', cssVars);
 
 const emit = defineEmits(['tap-left']);
 
@@ -79,10 +78,11 @@ const onTapLeft = () => {
 };
 
 const systemInfoStore = useSystemInfoStore();
-const { systemInfo } = systemInfoStore;
 
 const statusBarHeight = computed(() => {
-  return systemInfo.statusBarHeight ? `${systemInfo.statusBarHeight}px` : '0px';
+  return systemInfoStore.systemInfo.statusBarHeight
+    ? `${systemInfoStore.systemInfo.statusBarHeight}px`
+    : '0px';
 });
 </script>
 

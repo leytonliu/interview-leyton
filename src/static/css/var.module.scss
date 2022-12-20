@@ -37,13 +37,13 @@ $gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
 $navbar-height: 44px;
 $navbar-background: var(--navbar-background, #fff);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #222;
-    --text-color: #fff;
-    --navbar-background: #000;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background-color: #222;
+//     --text-color: #fff;
+//     --navbar-background: #000;
+//   }
+// }
 
 :export {
   purple: $purple;
