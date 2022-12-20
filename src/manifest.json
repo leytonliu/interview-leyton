@@ -5,18 +5,13 @@
   "versionName": "1.0.0",
   "versionCode": "100",
   "transformPx": false,
-  "h5": {
-    "darkmode": true,
-    "themeLocation": "theme.json"
-  },
   /* 小程序特有相关 */
   "mp-weixin": {
     "appid": "wx336dbb49d87115ab",
     "setting": {
       "urlCheck": false
     },
-    "usingComponents": true,
-    "darkmode": true
+    "usingComponents": true
   },
   "uniStatistics": {
     "enable": false
